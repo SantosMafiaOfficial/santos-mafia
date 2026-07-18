@@ -1,7 +1,7 @@
 const joinBtn = document.getElementById("joinBtn");
 const application = document.getElementById("application");
 
-const webhookURL = "https://discord.com/api/webhooks/1527966817845514301/i93cK7wypVi_T2OYGDwIpqmFCxEtMBUxQmxsZYX3XyNaU41txm3cSXH4oUDWnykPfd21";
+const webhookURL = " https://discord.com/api/webhooks/1527966817845514301/i93cK7wypVi_T2OYGDwIpqmFCxEtMBUxQmxsZYX3XyNaU41txm3cSXH4oUDWnykPfd21 ";
 
 joinBtn.addEventListener("click", () => {
 
