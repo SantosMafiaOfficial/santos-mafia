@@ -253,14 +253,36 @@ button{
 
 }
 .poster{
-    width:300px;
-    max-width:90%;
-    border-radius:20px;
+    width:260px;
+    max-width:85%;
+    border-radius:25px;
     border:2px solid #d4af37;
+
+    padding:10px;
+
+    background:rgba(0,0,0,.6);
+
     box-shadow:
-    0 0 30px #d4af37;
-    margin-bottom:30px;
-    animation: posterIn 1.5s ease;
+    0 0 20px #d4af37,
+    0 0 60px rgba(212,175,55,.4);
+
+    margin-bottom:25px;
+
+    animation: posterGlow 3s infinite alternate;
+}
+
+
+@keyframes posterGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.03);
+    }
+
+}
 }
 
 
