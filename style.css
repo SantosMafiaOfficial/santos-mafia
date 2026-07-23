@@ -190,7 +190,64 @@ body::before{
     transparent,
     rgba(0,0,0,.8)
     );
+header h1{
+    font-size:80px;
+    color:#d4af37;
+    animation: titleMove 3s infinite alternate;
+}
 
+
+header p{
+    animation: slideText 2s ease;
+}
+
+
+button{
+    background:linear-gradient(45deg,#d4af37,#fff0a0,#d4af37);
+    background-size:200%;
+    animation: buttonGlow 3s infinite;
+}
+
+
+@keyframes titleMove{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+
+
+@keyframes slideText{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+@keyframes buttonGlow{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:200%;
+    }
+
+}
     pointer-events:none;
 
 }
