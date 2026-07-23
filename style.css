@@ -497,3 +497,76 @@ html{
     scroll-behavior:smooth;
 
 }
+.success{
+
+    text-align:center;
+
+    padding:50px 30px;
+
+    background:
+    rgba(0,0,0,.75);
+
+    border:2px solid #d4af37;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 0 40px rgba(212,175,55,.6);
+
+    animation:successShow 1s ease;
+
+}
+
+
+.success h2{
+
+    color:#d4af37;
+
+    font-size:32px;
+
+    letter-spacing:3px;
+
+    margin-bottom:25px;
+
+    text-shadow:
+
+    0 0 20px #d4af37;
+
+}
+
+
+.success p{
+
+    color:#ddd;
+
+    font-size:18px;
+
+    margin:15px 0;
+
+    letter-spacing:1px;
+
+}
+
+
+
+@keyframes successShow{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.7);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
