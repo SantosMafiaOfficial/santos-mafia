@@ -1,86 +1,166 @@
+// ===========================
+// JOIN BUTTON SCROLL
+// ===========================
+
 const joinBtn = document.getElementById("joinBtn");
-const application = document.getElementById("application");
+const applySection = document.getElementById("apply");
+
+joinBtn.addEventListener("click", function(){
+
+    applySection.scrollIntoView({
+        behavior:"smooth"
+    });
+
+});
+
+
+
+// ===========================
+// DISCORD WEBHOOK
+// ===========================
 
 const webhookURL = "https://discord.com/api/webhooks/1527966817845514301/i93cK7wypVi_T2OYGDwIpqmFCxEtMBUxQmxsZYX3XyNaU41txm3cSXH4oUDWnykPfd21";
 
-joinBtn.addEventListener("click", () => {
 
-application.classList.remove("hidden");
 
-application.innerHTML = `
-<h2 style="color:#d4af37;text-align:center;">
-SANTOS MAFIA APPLICATION
-</h2>
+// ===========================
+// FORM SUBMIT
+// ===========================
 
-<form id="applyForm">
+const form = document.getElementById("applyForm");
 
-<input id="name" placeholder="One State Nickname" required>
 
-<input id="age" type="number" placeholder="Age" required>
+form.addEventListener("submit", async function(e){
 
-<input id="discord" placeholder="Discord Username" required>
+    e.preventDefault();
 
-<input id="level" type="number" placeholder="Level" required>
 
-<input id="ak" type="number" placeholder="AK Level" required>
+    const inputs = form.querySelectorAll("input, select, textarea");
 
-<select id="mic">
-<option>Microphone?</option>
-<option>Yes</option>
-<option>No</option>
-</select>
 
-<select id="oldGang">
-<option>No Previous Gang</option>
-<option>Yes</option>
-</select>
+    const data = {
 
-<input id="gangName" placeholder="Previous Gang Name">
+        nickname: inputs[0].value,
+        age: inputs[1].value,
+        discord: inputs[2].value,
+        level: inputs[3].value,
+        ak: inputs[4].value,
+        activity: inputs[5].value,
+        voice: inputs[6].value,
+        previousGang: inputs[7].value,
+        reason: inputs[8].value
 
-<textarea id="reason" placeholder="Why do you want to join?"></textarea>
+    };
 
-<button class="submit">
-SUBMIT APPLICATION
-</button>
 
-</form>
-`;
 
-document.getElementById("applyForm").onsubmit = async (e)=>{
-e.preventDefault();
+    const message = {
 
-let message = {
-content:
-`🔥 **NEW SANTOS MAFIA APPLICATION**
+        embeds:[{
 
-👤 Name: ${name.value}
-🎂 Age: ${age.value}
-🎮 Discord: ${discord.value}
-⭐ Level: ${level.value}
-🔫 AK Level: ${ak.value}
-🎤 Microphone: ${mic.value}
-🏴 Previous Gang: ${oldGang.value}
-🏴 Gang Name: ${gangName.value}
+            title:"🔥 NEW VITTORIO MAFIA APPLICATION",
 
-📝 Reason:
-${reason.value}
-`
-};
+            color:15844367,
 
-await fetch(webhookURL,{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(message)
-});
+            fields:[
 
-alert("Application Sent Successfully!");
+                {
+                    name:"Nickname",
+                    value:data.nickname,
+                    inline:true
+                },
 
-};
+                {
+                    name:"Age",
+                    value:data.age,
+                    inline:true
+                },
 
-application.scrollIntoView({
-behavior:"smooth"
-});
+                {
+                    name:"Discord",
+                    value:data.discord,
+                    inline:true
+                },
+
+                {
+                    name:"Game Level",
+                    value:data.level,
+                    inline:true
+                },
+
+                {
+                    name:"AK Level",
+                    value:data.ak,
+                    inline:true
+                },
+
+                {
+                    name:"Daily Activity",
+                    value:data.activity+" Hours",
+                    inline:true
+                },
+
+                {
+                    name:"Voice Chat",
+                    value:data.voice,
+                    inline:true
+                },
+
+                {
+                    name:"Previous Gang",
+                    value:data.previousGang || "None"
+                },
+
+                {
+                    name:"Reason",
+                    value:data.reason
+                }
+
+            ],
+
+            footer:{
+                text:"VITTORIO MAFIA Recruitment"
+            }
+
+        }]
+
+    };
+
+
+
+    await fetch(webhookURL, {
+
+        method:"POST",
+
+        headers:{
+            "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify(message)
+
+    });
+
+
+
+    form.innerHTML = `
+
+        <div class="success">
+
+            <h2>
+            APPLICATION SENT
+            </h2>
+
+            <p>
+            Welcome to VITTORIO MAFIA.
+            </p>
+
+            <p>
+            Our leaders will review your application.
+            </p>
+
+        </div>
+
+    `;
+
 
 });
