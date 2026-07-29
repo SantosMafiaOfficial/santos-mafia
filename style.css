@@ -1,206 +1,346 @@
+/* ===========================
+   RESET
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    min-height:100vh;
-    background:radial-gradient(circle at top,#3b2a00,#050505 60%);
+    background:#050505;
     color:#fff;
     overflow-x:hidden;
-    position:relative;
 }
 
-body::before{
-    content:"";
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+nav{
+
     position:fixed;
-    inset:0;
-    background:linear-gradient(
-        120deg,
-        rgba(212,175,55,.12),
-        transparent,
-        rgba(0,0,0,.8)
-    );
-    pointer-events:none;
-    z-index:-1;
-}
 
-/* HEADER */
+    top:0;
+    left:0;
 
-header{
-    height:100vh;
+    width:100%;
+
     display:flex;
-    flex-direction:column;
-    justify-content:center;
+
+    justify-content:space-between;
+
     align-items:center;
-    text-align:center;
-    animation:fadeIn 1.2s ease;
-}
 
-/* POSTER */
+    padding:20px 80px;
 
-.poster{
-    width:260px;
-    max-width:85%;
-    border-radius:25px;
-    border:2px solid #d4af37;
-    padding:10px;
-    background:rgba(0,0,0,.55);
-
-    box-shadow:
-        0 0 20px #d4af37,
-        0 0 60px rgba(212,175,55,.35);
-
-    margin-bottom:25px;
-
-    animation:posterGlow 3s infinite alternate;
-}
-
-@keyframes posterGlow{
-    from{
-        transform:scale(1);
-    }
-
-    to{
-        transform:scale(1.04);
-    }
-}
-
-/* TITLE */
-
-header h1{
-    font-size:72px;
-    letter-spacing:8px;
-    color:#d4af37;
-
-    text-shadow:
-        0 0 15px #d4af37,
-        0 0 40px #8a6b00;
-
-    animation:titleGlow 2.5s infinite alternate;
-}
-
-header p{
-    margin-top:20px;
-    font-size:20px;
-    color:#ddd;
-    letter-spacing:3px;
-}
-
-@keyframes titleGlow{
-    from{
-        text-shadow:
-            0 0 10px #d4af37,
-            0 0 30px #8a6b00;
-    }
-
-    to{
-        text-shadow:
-            0 0 25px #d4af37,
-            0 0 60px #d4af37;
-    }
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-/* BUTTON */
-
-button{
-    margin-top:40px;
-    padding:18px 45px;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
-
-    background:linear-gradient(45deg,#b8860b,#d4af37,#f5df7c);
-    background-size:200%;
-
-    color:#000;
-    font-size:18px;
-    font-weight:bold;
-    letter-spacing:2px;
-
-    transition:.35s;
-}
-
-button:hover{
-    transform:scale(1.08);
-    background-position:right center;
-
-    box-shadow:
-        0 0 20px #d4af37,
-        0 0 45px rgba(212,175,55,.5);
-}
-
-
-
-/* APPLICATION */
-
-#application{
-
-    width:90%;
-    max-width:650px;
-
-    margin:60px auto;
-
-    padding:40px;
-
-    background:rgba(10,10,10,.82);
-
-    border:2px solid #d4af37;
-
-    border-radius:25px;
+    background:rgba(0,0,0,.65);
 
     backdrop-filter:blur(15px);
 
-    box-shadow:
-        0 0 35px rgba(212,175,55,.35);
+    border-bottom:1px solid rgba(212,175,55,.25);
 
-    animation:formShow 1s ease;
+    z-index:999;
 
 }
 
 
-#application h2{
-
-    text-align:center;
+.logo{
 
     color:#d4af37;
 
-    margin-bottom:30px;
+    font-size:28px;
 
-    letter-spacing:2px;
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    text-shadow:
+    0 0 12px #d4af37;
 
 }
 
 
+nav ul{
 
-/* FORM */
+    display:flex;
 
-#applyForm{
+    gap:40px;
+
+    list-style:none;
+
+}
+
+
+nav ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    transition:.35s;
+
+}
+
+
+nav ul li a:hover{
+
+    color:#d4af37;
+
+}
+
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    min-height:100vh;
 
     display:flex;
 
     flex-direction:column;
 
-    gap:15px;
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 20px;
+
+    background:
+    radial-gradient(circle at top,#3b2a00 0%,#050505 65%);
+
+}
+
+
+.logo-image{
+
+    width:260px;
+
+    margin-bottom:35px;
+
+    border-radius:25px;
+
+    border:2px solid #d4af37;
+
+    padding:10px;
+
+    background:rgba(255,255,255,.03);
+
+    box-shadow:
+    0 0 25px #d4af37,
+    0 0 70px rgba(212,175,55,.35);
+
+    animation:posterGlow 3s infinite alternate;
+
+}
+
+
+.hero h1{
+
+    font-size:75px;
+
+    color:#d4af37;
+
+    letter-spacing:8px;
+
+    text-shadow:
+
+    0 0 18px #d4af37,
+
+    0 0 45px #8a6b00;
+
+}
+
+
+.hero p{
+
+    margin-top:20px;
+
+    color:#ddd;
+
+    font-size:22px;
+
+    letter-spacing:4px;
+
+}
+
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+    margin-top:45px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    color:#000;
+
+    background:
+    linear-gradient(
+    45deg,
+    #b8860b,
+    #d4af37,
+    #fff0a0
+    );
+
+    background-size:200%;
+
+    transition:.35s;
+
+}
+
+
+button:hover{
+
+    transform:translateY(-3px) scale(1.05);
+
+    background-position:right center;
+
+    box-shadow:
+
+    0 0 25px #d4af37,
+
+    0 0 60px rgba(212,175,55,.5);
+
+}
+/* ===========================
+   ABOUT
+=========================== */
+
+.about{
+
+    padding:120px 12%;
+
+    text-align:center;
+
+    background:#080808;
+
+}
+
+.about h2{
+
+    color:#d4af37;
+
+    font-size:42px;
+
+    margin-bottom:35px;
+
+    letter-spacing:4px;
+
+    text-shadow:
+    0 0 15px #d4af37;
+
+}
+
+.about p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    color:#d6d6d6;
+
+    font-size:18px;
+
+    line-height:1.9;
 
 }
 
 
 
-/* INPUTS */
+/* ===========================
+   APPLICATION
+=========================== */
+
+.application{
+
+    padding:120px 0;
+
+    background:
+    radial-gradient(circle,#151515,#050505);
+
+}
+
+.application h2{
+
+    text-align:center;
+
+    color:#d4af37;
+
+    font-size:42px;
+
+    letter-spacing:4px;
+
+    margin-bottom:45px;
+
+    text-shadow:
+    0 0 15px #d4af37;
+
+}
+
+
+
+/* ===========================
+   FORM
+=========================== */
+
+#applyForm{
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:45px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    border-radius:25px;
+
+    border:2px solid rgba(212,175,55,.35);
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 0 40px rgba(212,175,55,.20);
+
+}
 
 #applyForm input,
 #applyForm select,
@@ -208,15 +348,15 @@ button:hover{
 
     width:100%;
 
-    padding:15px;
-
-    background:#0d0d0d;
-
-    border:1px solid #666;
-
-    color:#fff;
+    padding:16px;
 
     border-radius:12px;
+
+    border:1px solid #444;
+
+    background:#111;
+
+    color:white;
 
     font-size:15px;
 
@@ -224,6 +364,13 @@ button:hover{
 
 }
 
+#applyForm textarea{
+
+    min-height:140px;
+
+    resize:vertical;
+
+}
 
 #applyForm input:focus,
 #applyForm select:focus,
@@ -234,32 +381,40 @@ button:hover{
     border-color:#d4af37;
 
     box-shadow:
-        0 0 15px rgba(212,175,55,.7);
+    0 0 15px rgba(212,175,55,.6);
 
 }
-
-
-textarea{
-
-    min-height:120px;
-
-    resize:vertical;
-
-}
-
-
-
-/* SUBMIT */
 
 .submit{
+
+    margin-top:15px;
 
     width:100%;
 
 }
+/* ===========================
+   ANIMATIONS
+=========================== */
 
 
+@keyframes posterGlow{
 
-@keyframes formShow{
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.05);
+
+    }
+
+}
+
+
+@keyframes fadeUp{
 
     from{
 
@@ -278,117 +433,172 @@ textarea{
     }
 
 }
-/* SUCCESS MESSAGE */
 
-.success{
 
-    text-align:center;
+/* ===========================
+   SCROLL EFFECT
+=========================== */
 
-    padding:50px 30px;
 
-    background:rgba(0,0,0,.75);
+.hero,
+.about,
+.application{
 
-    border:2px solid #d4af37;
-
-    border-radius:25px;
-
-    box-shadow:
-        0 0 40px rgba(212,175,55,.55);
-
-    animation:successShow .8s ease;
+    animation:fadeUp 1s ease;
 
 }
 
-.success h2{
 
-    color:#d4af37;
 
-    font-size:32px;
+/* ===========================
+   GOLD LIGHT EFFECT
+=========================== */
 
-    margin-bottom:20px;
 
-    text-shadow:
-        0 0 20px #d4af37;
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        rgba(212,175,55,.12),
+        transparent,
+        rgba(0,0,0,.8)
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
 
 }
 
-.success p{
 
-    color:#ddd;
 
-    font-size:18px;
+/* ===========================
+   MOBILE
+=========================== */
 
-    margin:12px 0;
 
-    letter-spacing:1px;
+@media(max-width:800px){
 
-}
 
-@keyframes successShow{
+    nav{
 
-    from{
-        opacity:0;
-        transform:scale(.8);
+        padding:20px;
+
+        flex-direction:column;
+
+        gap:20px;
+
     }
 
-    to{
-        opacity:1;
-        transform:scale(1);
+
+    nav ul{
+
+        gap:20px;
+
     }
 
-}
+
+    .logo{
+
+        font-size:22px;
+
+    }
 
 
+    .hero h1{
 
-/* HIDDEN */
-
-.hidden{
-    display:none;
-}
-
-
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    header h1{
         font-size:42px;
+
         letter-spacing:4px;
+
     }
 
-    header p{
-        font-size:15px;
-        padding:0 20px;
+
+    .hero p{
+
+        font-size:16px;
+
     }
 
-    .poster{
+
+    .logo-image{
+
         width:220px;
+
     }
+
+
+    .about h2,
+    .application h2{
+
+        font-size:32px;
+
+    }
+
+
+    #applyForm{
+
+        padding:25px;
+
+    }
+
 
     button{
+
         width:90%;
-    }
 
-    #application{
-        width:95%;
-        padding:25px;
     }
 
 }
 
 
 
-/* SCROLL */
+/* ===========================
+   CUSTOM SCROLLBAR
+=========================== */
 
-html{
-    scroll-behavior:smooth;
-}
-select option{
-    background:#0d0d0d;
-    color:white;
+
+::-webkit-scrollbar{
+
+    width:10px;
+
 }
 
-::placeholder{
-    color:#aaa;
+
+::-webkit-scrollbar-track{
+
+    background:#050505;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#d4af37;
+
+    border-radius:10px;
+
+}
+
+
+
+/* ===========================
+   SELECTION
+=========================== */
+
+
+::selection{
+
+    background:#d4af37;
+
+    color:#000;
+
 }
