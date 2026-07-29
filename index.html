@@ -1,67 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SANTOS MAFIA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>VITTORIO MAFIA</title>
+
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="particles"></div>
+    <!-- Navigation -->
 
-<header>
-<img class="poster" src="file_00000000afc47246b89e0e770b092c5a.png" alt="Santos Mafia">
-<h1>SANTOS MAFIA</h1>
+    <nav>
 
-<p>
-THE STRONGEST FAMILY IN ONE STATE RP
-</p>
+        <div class="logo">
+            VITTORIO MAFIA
+        </div>
 
-<button id="joinBtn">
-JOIN THE FAMILY
-</button>
+        <ul>
 
-</header>
+            <li><a href="#home">HOME</a></li>
 
+            <li><a href="#about">ABOUT</a></li>
 
-<section id="application" class="hidden">
+            <li><a href="#apply">APPLY</a></li>
 
-<h2>
-MEMBERSHIP APPLICATION
-</h2>
+        </ul>
 
-<form id="applyForm">
-
-<input id="name" placeholder="Your Nickname" required>
-
-<input id="age" placeholder="Age" required>
-
-<input id="discord" placeholder="Discord Username" required>
-
-<input id="level" placeholder="Game Level" required>
-
-<input id="ak" placeholder="AK Level" required>
+    </nav>
 
 
-<textarea id="reason" placeholder="Why do you want to join Santos Mafia?"></textarea>
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+
+        <img src="images/logo.png" class="logo-image">
+
+        <h1>VITTORIO MAFIA</h1>
+
+        <p>
+            Power • Loyalty • Respect
+        </p>
+
+        <button id="joinBtn">
+            JOIN THE FAMILY
+        </button>
+
+    </section>
 
 
-<button class="submit">
-SEND APPLICATION
-</button>
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+
+        <h2>ABOUT US</h2>
+
+        <p>
+
+            Vittorio Mafia is an elite Italian-style family built on loyalty,
+            discipline and respect.
+
+            We do not recruit everyone.
+
+            We recruit only those who earn their place.
+
+        </p>
+
+    </section>
 
 
-</form>
+    <!-- APPLICATION -->
 
-</section>
+    <section id="apply" class="application">
 
+        <h2>MEMBERSHIP APPLICATION</h2>
 
-<script src="script.js"></script>
+        <form id="applyForm">
+
+            <input
+                type="text"
+                placeholder="Nickname"
+                required>
+
+            <input
+                type="number"
+                placeholder="Age"
+                required>
+
+            <input
+                type="text"
+                placeholder="Discord Username"
+                required>
+
+            <input
+                type="number"
+                placeholder="Game Level"
+                required>
+
+            <input
+                type="number"
+                placeholder="AK Level"
+                required>
+
+            <input
+                type="number"
+                placeholder="Daily Activity (Hours)"
+                required>
+
+            <select required>
+
+                <option value="">
+                    Voice Chat
+                </option>
+
+                <option>
+                    Yes
+                </option>
+
+                <option>
+                    No
+                </option>
+
+            </select>
+
+            <input
+                type="text"
+                placeholder="Previous Gang">
+
+            <textarea
+                placeholder="Why do you want to join Vittorio Mafia?"
+                required></textarea>
+
+            <button
+                class="submit"
+                type="submit">
+
+                SEND APPLICATION
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
